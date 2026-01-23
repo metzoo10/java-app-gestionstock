@@ -171,7 +171,7 @@ public class ModifierProduitFrame extends JFrame {
             }
             dispose();
         } else {
-            JOptionPane.showMessageDialog(this, "Erreur lors de la modification du produit.");
+            JOptionPane.showMessageDialog(this, "Erreur lors de la modification du produit, veuillez réessayer !");
         }
     }
 }

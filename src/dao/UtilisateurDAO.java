@@ -9,7 +9,8 @@ import utils.DBConnexion;
 
 public class UtilisateurDAO {
 
-    // authentification simple
+    // authentification
+	
     public boolean login(String login, String password) {
         String sql = "SELECT id FROM utilisateurs WHERE login=? AND mot_de_passe=?";
         try (Connection conn = DBConnexion.getConnection();
@@ -29,8 +30,9 @@ public class UtilisateurDAO {
     }
 
     // Ajouter un utilisateur
+    
     public boolean ajouterUtilisateur(Utilisateur u) throws Exception {
-        // vérifier si login existe déjà
+        // vérifier si login existe
         String checkSql = "SELECT id FROM utilisateurs WHERE login=?";
         try (Connection conn = DBConnexion.getConnection();
              PreparedStatement checkPs = conn.prepareStatement(checkSql)) {

@@ -80,6 +80,7 @@ public class LoginFrame extends JFrame {
         btnLogin.addActionListener(e -> authentifier());
 
         // Appuyer sur Entrée déclenche la connexion
+        
         getRootPane().setDefaultButton(btnLogin);
     }
 

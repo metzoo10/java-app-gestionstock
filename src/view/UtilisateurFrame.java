@@ -29,7 +29,7 @@ public class UtilisateurFrame extends JFrame {
 
         Font font = new Font("Segoe UI", Font.BOLD, 13);
 
-        // ===== PRÉNOM =====
+        // ===== PRENOM =====
         gbc.gridx = 0; gbc.gridy = 0;
         panel.add(new JLabel("Prénom"), gbc);
 
@@ -97,6 +97,7 @@ public class UtilisateurFrame extends JFrame {
         btnAnnuler.addActionListener(e -> dispose());
     }
 
+    // ===== METHODE AJOUT UTILISATEUR =====
     private void ajouterUtilisateur() {
         String prenom = txtPrenom.getText().trim();
         String nom = txtNom.getText().trim();

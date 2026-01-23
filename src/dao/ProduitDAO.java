@@ -10,6 +10,7 @@ import utils.DBConnexion;
 public class ProduitDAO {
 
     // ajouter un produit
+	
     public boolean ajouterProduit(Produit p) {
         if (p.getNom().trim().isEmpty() || p.getQuantiteEntree() < 0 || p.getPrixAchat() < 0 || p.getPrixVente() < 0) {
             return false;
@@ -44,6 +45,7 @@ public class ProduitDAO {
     }
 
     // supprimer un produit
+    
     public boolean supprimerProduit(int id) {
         String sql = "DELETE FROM produits WHERE id=? AND quantite_sortie=0";
         try (Connection conn = DBConnexion.getConnection();
@@ -59,6 +61,7 @@ public class ProduitDAO {
     }
 
     // modifier un produit
+    
     public boolean modifierProduit(Produit p) {
         if (p.getNom().trim().isEmpty() || p.getQuantiteEntree() < 0 || p.getPrixAchat() < 0 || p.getPrixVente() < 0) {
             return false;
@@ -82,7 +85,8 @@ public class ProduitDAO {
         }
     }
 
-    // ajouter du stock
+    // ajouter au stock
+    
     public boolean ajouterStock(int id, int qte) {
         if (qte <= 0) return false;
 
@@ -127,7 +131,8 @@ public class ProduitDAO {
         return list;
     }
 
-    // détecter le stock faible
+    // détecter si le stock est faible
+    
     public boolean isStockFaible(Produit p) {
         return p.getStockRestant() < 10;
     }

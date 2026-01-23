@@ -10,6 +10,7 @@ import utils.DBConnexion;
 public class VenteDAO {
 
     // enregistrer une vente
+	
     public boolean enregistrerVente(Vente v) {
         String sqlUpdate = "UPDATE produits SET quantite_sortie = quantite_sortie + ? " +
                            "WHERE id=? AND (quantite_entree - quantite_sortie) >= ?";
@@ -21,7 +22,7 @@ public class VenteDAO {
             try (PreparedStatement psUpdate = conn.prepareStatement(sqlUpdate);
                  PreparedStatement psInsert = conn.prepareStatement(sqlInsert)) {
 
-                // Mise à jour du stock
+                // mise à jour du stock
                 psUpdate.setInt(1, v.getQuantite());
                 psUpdate.setInt(2, v.getProduitId());
                 psUpdate.setInt(3, v.getQuantite());
@@ -53,7 +54,8 @@ public class VenteDAO {
         }
     }
 
-    // récupérer les ventes avec détail et nom du produit
+    // récupérer les ventes avec date et nom du produit
+    
     public List<Vente> getAllVentes() {
         List<Vente> ventes = new ArrayList<>();
         String sql = "SELECT v.id, v.produit_id, v.quantite, v.date_vente, p.nom AS nomProduit " +

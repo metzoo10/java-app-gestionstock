@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : dim. 18 jan. 2026 à 18:27
+-- Généré le : sam. 24 jan. 2026 à 00:32
 -- Version du serveur : 10.4.32-MariaDB
 -- Version de PHP : 8.2.12
 
@@ -41,13 +41,11 @@ CREATE TABLE `produits` (
 --
 
 INSERT INTO `produits` (`id`, `nom`, `quantite_entree`, `quantite_sortie`, `prix_achat`, `prix_vente`) VALUES
-(1, 'Clavier sans fil', 13, 3, 5500, 5800),
-(3, 'Samsung Galaxy Edge', 17, 4, 45000, 45000),
-(4, 'Machine à laver', 13, 1, 33500, 33750),
-(5, 'Casque gaming', 19, 9, 11500, 12500),
-(6, 'Micro-ondes', 14, 4, 74000, 81000),
-(8, 'Smart Technology', 105, 2, 115000, 125000),
-(9, 'Iphone 17', 33, 4, 155000, 185000);
+(1, 'Casque gaming', 65, 0, 12000, 12500),
+(2, 'iPhone 17', 20, 1, 115000, 120000),
+(3, 'Machine à laver', 15, 0, 120000, 125000),
+(4, 'Support PC', 10, 2, 10000, 11500),
+(5, 'TV Smart Technology', 7, 0, 130000, 145000);
 
 -- --------------------------------------------------------
 
@@ -68,11 +66,7 @@ CREATE TABLE `utilisateurs` (
 --
 
 INSERT INTO `utilisateurs` (`id`, `prenom`, `nom`, `login`, `mot_de_passe`) VALUES
-(1, 'Admin', 'System', 'admin', 'admin'),
-(2, 'Mouhamed', 'Ba', 'medzoba', 'medzo10'),
-(3, 'Adiouma', 'Kane', 'adiouma', 'passer'),
-(4, 'Mouhamed', 'Ba', 'mouhaba', 'passer123'),
-(5, 'mouhamed', 'ba', 'mouhabaa', 'exojava');
+(1, 'Admin', 'System', 'admin', 'admin');
 
 -- --------------------------------------------------------
 
@@ -92,15 +86,8 @@ CREATE TABLE `ventes` (
 --
 
 INSERT INTO `ventes` (`id`, `produit_id`, `quantite`, `date_vente`) VALUES
-(1, 1, 1, '2025-12-19 22:19:51'),
-(2, 1, 1, '2025-12-19 22:20:31'),
-(3, 3, 1, '2025-12-20 16:56:55'),
-(4, 4, 1, '2025-12-20 17:18:04'),
-(5, 6, 1, '2025-12-25 20:21:55'),
-(6, 5, 7, '2026-01-11 22:11:09'),
-(7, 8, 2, '2026-01-12 17:42:21'),
-(8, 6, 3, '2026-01-12 21:10:38'),
-(9, 9, 4, '2026-01-12 21:24:00');
+(1, 2, 1, '2026-01-23 18:57:09'),
+(2, 4, 2, '2026-01-23 18:57:48');
 
 --
 -- Index pour les tables déchargées
@@ -135,7 +122,7 @@ ALTER TABLE `ventes`
 -- AUTO_INCREMENT pour la table `produits`
 --
 ALTER TABLE `produits`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT pour la table `utilisateurs`
@@ -147,7 +134,7 @@ ALTER TABLE `utilisateurs`
 -- AUTO_INCREMENT pour la table `ventes`
 --
 ALTER TABLE `ventes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- Contraintes pour les tables déchargées

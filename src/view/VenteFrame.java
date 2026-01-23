@@ -40,9 +40,7 @@ public class VenteFrame extends JFrame {
         chargerVentes();
     }
 
-    // =======================
-    // FORMULAIRE DE VENTE
-    // =======================
+    // ===== FORMULAIRE DE VENTE =====
     @SuppressWarnings("unused")
 	private JPanel creerPanelFormulaire() {
         JPanel panel = new JPanel(new GridBagLayout());
@@ -89,9 +87,7 @@ public class VenteFrame extends JFrame {
         return panel;
     }
 
-    // =======================
-    // TABLE DES VENTES
-    // =======================
+    // ===== TABLE DES VENTES =====
     private JScrollPane creerTableVentes() {
         modelVentes = new DefaultTableModel(
                 new String[]{"ID", "Produit", "Quantité", "Date"}, 0
@@ -127,9 +123,7 @@ public class VenteFrame extends JFrame {
         return new JScrollPane(tableVentes);
     }
 
-    // =======================
-    // LOGIQUE MÉTIER
-    // =======================
+    // ===== logique métier =====
     private void chargerProduits() {
         comboProduits.removeAllItems();
         List<Produit> produits = produitDAO.getAllProduits();
@@ -200,9 +194,7 @@ public class VenteFrame extends JFrame {
         }
     }
 
-    // =======================
-    // STYLE DES BOUTONS
-    // =======================
+    // ===== style boutons =====
     private void styleButton(JButton btn, Dimension size, Color bgColor) {
         btn.setPreferredSize(size);
         btn.setFont(new Font("Segoe UI", Font.BOLD, 13));

@@ -32,6 +32,7 @@ public class ProduitFrame extends JFrame {
         table = new JTable(model);
 
         // alerte stock faible
+        
         table.setDefaultRenderer(Object.class, new DefaultTableCellRenderer() {
             @Override
             public Component getTableCellRendererComponent(
@@ -73,38 +74,28 @@ public class ProduitFrame extends JFrame {
         panelChamps.add(txtPrixAchat);
         panelChamps.add(txtPrixVente);
 
-	     // =======================
-	     // PANEL DES BOUTONS
-	     // =======================
+	     // ====== PANEL DES BOUTONS =====
 	     JPanel panelButtons = new JPanel();
 	     panelButtons.setLayout(new FlowLayout(FlowLayout.CENTER, 15, 10));
 	     panelButtons.setBackground(Color.WHITE);
 	
-	     // =======================
-	     // STYLE COMMUN
-	     // =======================
+	     // ===== STYLE COMMUN =====
 	     Dimension btnSize = new Dimension(150, 38);
 	     Font btnFont = new Font("Segoe UI", Font.BOLD, 13);
 	
-	     // =======================
-	     // BOUTONS
-	     // =======================
+	     // ===== BOUTONS =====
 	     JButton btnAjouter = new JButton("Ajouter");
 	     JButton btnSupprimer = new JButton("Supprimer");
 	     JButton btnModifier = new JButton("Modifier");
 	     JButton btnAjouterStock = new JButton("Ajouter le stock");
 	
-	     // =======================
-	     // STYLE DES BOUTONS
-	     // =======================
+	     // ===== STYLE DES BOUTONS =====
 	     styleButton(btnAjouter, btnSize, btnFont, new Color(0, 153, 76));
 	     styleButton(btnModifier, btnSize, btnFont, new Color(0, 102, 204));
 	     styleButton(btnSupprimer, btnSize, btnFont, new Color(204, 0, 0));
 	     styleButton(btnAjouterStock, btnSize, btnFont, new Color(120, 120, 120));
 	
-	     // =======================
-	     // AJOUT AU PANEL
-	     // =======================
+	     // ===== AJOUT AU PANEL =====
 	     panelButtons.add(btnAjouter);
 	     panelButtons.add(btnSupprimer);
 	     panelButtons.add(btnModifier);
@@ -153,7 +144,7 @@ public class ProduitFrame extends JFrame {
         chargerProduits();
     }
 
-    // ===== MÉTHODE AJOUT =====
+    // ===== METHODE AJOUT =====
     private void ajouterProduit() {
         if (!validerChamps()) return;
 
@@ -180,7 +171,7 @@ public class ProduitFrame extends JFrame {
         }
     }
 
-    // ===== MÉTHODE SUPPRIMER =====
+    // ===== METHODE SUPPRIMER =====
     private void supprimerProduit() {
         int selectedRow = table.getSelectedRow();
         if (selectedRow == -1) {
@@ -214,7 +205,7 @@ public class ProduitFrame extends JFrame {
         }
     }
 
-    // ===== MÉTHODE AJOUTER STOCK =====
+    // ===== METHODE AJOUTER STOCK =====
     private void ajouterStock() {
         int selectedRow = table.getSelectedRow();
         if (selectedRow == -1) {
@@ -247,7 +238,7 @@ public class ProduitFrame extends JFrame {
         }
     }
 
-    // ===== RAFRAÎCHIR TABLEAU =====
+    // ===== RAFRAiCHIR TABLEAU =====
     void chargerProduits() {
         model.setRowCount(0);
         List<Produit> produits = produitDAO.getAllProduits();
